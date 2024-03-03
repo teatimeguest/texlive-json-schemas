@@ -1,0 +1,114 @@
+[
+  {
+    "default": "1",
+    "tlmgrname": "formats",
+    "format": "b",
+    "value": "1",
+    "description": "Generate formats at installation or update",
+    "name": "create_formats"
+  },
+  {
+    "value": "1",
+    "name": "install_docfiles",
+    "description": "Install documentation files",
+    "default": "1",
+    "tlmgrname": "docfiles",
+    "format": "b"
+  },
+  {
+    "name": "location",
+    "description": "Default package repository",
+    "value": "https://ctan.math.utah.edu/ctan/tex-archive/systems/texlive/tlnet",
+    "format": "u",
+    "tlmgrname": "repository",
+    "default": "__MASTER__"
+  },
+  {
+    "format": "b",
+    "tlmgrname": "desktop_integration",
+    "default": "1",
+    "description": "Create Start menu shortcuts (Windows)",
+    "name": "desktop_integration",
+    "value": "1"
+  },
+  {
+    "tlmgrname": "generate_updmap",
+    "default": "0",
+    "format": "b",
+    "value": "0",
+    "description": "Run tlmgr generate updmap after maps have changed",
+    "name": "generate_updmap"
+  },
+  {
+    "tlmgrname": "postcode",
+    "default": "1",
+    "format": "b",
+    "value": "1",
+    "name": "post_code",
+    "description": "Run postinst code blobs"
+  },
+  {
+    "tlmgrname": "sys_bin",
+    "default": "/usr/local/bin",
+    "format": "p",
+    "value": "/usr/local/bin",
+    "description": "Destination for symlinks for binaries",
+    "name": "sys_bin"
+  },
+  {
+    "format": "p",
+    "tlmgrname": "backupdir",
+    "default": "tlpkg/backups",
+    "name": "backupdir",
+    "description": "Directory for backups",
+    "value": "tlpkg/backups"
+  },
+  {
+    "value": "/usr/local/share/man",
+    "name": "sys_man",
+    "description": "Destination for symlinks for man pages",
+    "default": "/usr/local/share/man",
+    "tlmgrname": "sys_man",
+    "format": "p"
+  },
+  {
+    "format": "n:-1..",
+    "default": "1",
+    "tlmgrname": "autobackup",
+    "description": "Number of backups to keep",
+    "name": "autobackup",
+    "value": "1"
+  },
+  {
+    "value": "1",
+    "description": "Change file associations (Windows)",
+    "name": "file_assocs",
+    "tlmgrname": "fileassocs",
+    "default": "1",
+    "format": "n:0..2"
+  },
+  {
+    "format": "b",
+    "tlmgrname": "multiuser",
+    "default": "1",
+    "name": "w32_multi_user",
+    "description": "Install for all users (Windows)",
+    "value": "1"
+  },
+  {
+    "tlmgrname": "sys_info",
+    "default": "/usr/local/share/info",
+    "format": "p",
+    "value": "/usr/local/share/info",
+    "name": "sys_info",
+    "description": "Destination for symlinks for info docs"
+  },
+  {
+    "value": "1",
+    "name": "install_srcfiles",
+    "description": "Install source files",
+    "default": "1",
+    "tlmgrname": "srcfiles",
+    "format": "b"
+  }
+]

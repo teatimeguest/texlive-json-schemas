@@ -1,0 +1,34 @@
+{
+  "$id": "tlsetting.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TLSETTING",
+  "description": "https://tug.org/svn/texlive/trunk/Master/tlpkg/doc/json-formats.txt?revision=56458&view=markup#l133",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "type": {
+      "description": "UNDOCUMENTED.",
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "description"
+  ],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "type": "b",
+      "description": "This tree acts as user tree",
+      "name": "usertree"
+    }
+  ]
+}

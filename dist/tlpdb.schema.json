@@ -1,0 +1,397 @@
+{
+  "$id": "tlpdb.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TLPDB",
+  "description": "This format is used when dumping tlpdb, local or remote JSON object with the following fields: keys are tags, values are tlpdb in TLPDBSINGLE format.\nhttps://tug.org/svn/texlive/trunk/Master/tlpkg/doc/json-formats.txt?revision=56458&view=markup#l78",
+  "type": "object",
+  "patternProperties": {
+    "^.*$": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "TLPDBSINGLE",
+      "description": "https://tug.org/svn/texlive/trunk/Master/tlpkg/doc/json-formats.txt?revision=56458&view=markup#l65",
+      "type": "object",
+      "properties": {
+        "options": {
+          "type": "array",
+          "items": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "TLOPTION",
+            "description": "https://tug.org/svn/texlive/trunk/Master/tlpkg/doc/json-formats.txt?revision=56458&view=markup#l133",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "tlmgrname": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "format": {
+                "type": "string"
+              },
+              "default": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "tlmgrname",
+              "description",
+              "format",
+              "default"
+            ],
+            "additionalProperties": false,
+            "examples": [
+              {
+                "format": "b",
+                "description": "Install source files",
+                "tlmgrname": "srcfiles",
+                "value": "1",
+                "default": "1",
+                "name": "install_srcfiles"
+              }
+            ]
+          }
+        },
+        "settings": {
+          "type": "array",
+          "items": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "TLSETTING",
+            "description": "https://tug.org/svn/texlive/trunk/Master/tlpkg/doc/json-formats.txt?revision=56458&view=markup#l133",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "type": {
+                "description": "UNDOCUMENTED.",
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "description"
+            ],
+            "additionalProperties": false,
+            "examples": [
+              {
+                "type": "b",
+                "description": "This tree acts as user tree",
+                "name": "usertree"
+              }
+            ]
+          }
+        },
+        "configs": {
+          "type": "object",
+          "properties": {
+            "container_split_src_files": {
+              "type": "boolean"
+            },
+            "container_split_doc_files": {
+              "type": "boolean"
+            },
+            "container_format": {
+              "type": "string"
+            },
+            "minrelease": {
+              "type": "string"
+            },
+            "release": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "tlpkgs": {
+          "type": "array",
+          "items": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "TLPOBJ",
+            "description": "JSON object with key/values according to the underlying structure with a few exception (docfiles and docfiledata are merged).\nhttps://tug.org/svn/texlive/trunk/Master/tlpkg/doc/json-formats.txt?revision=56458&view=markup#l9",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "examples": [
+                  "12many"
+                ]
+              },
+              "shortdesc": {
+                "$comment": "The value of `null` is UNDOCUMENTED.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "longdesc": {
+                "$comment": "The value of `null` is UNDOCUMENTED.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "category": {
+                "type": "string"
+              },
+              "catalogue": {
+                "$comment": "The value of `null` is UNDOCUMENTED.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "containerchecksum": {
+                "type": "string"
+              },
+              "srccontainerchecksum": {
+                "type": "string"
+              },
+              "doccontainerchecksum": {
+                "type": "string"
+              },
+              "revision": {
+                "type": "integer",
+                "examples": [
+                  12345
+                ]
+              },
+              "runsize": {
+                "type": "integer"
+              },
+              "docsize": {
+                "type": "integer"
+              },
+              "srcsize": {
+                "type": "integer"
+              },
+              "containersize": {
+                "type": "integer"
+              },
+              "srccontainersize": {
+                "type": "integer"
+              },
+              "doccontainersize": {
+                "type": "integer"
+              },
+              "relocated": {
+                "type": "boolean",
+                "examples": [
+                  false
+                ]
+              },
+              "runfiles": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "examples": [
+                  [
+                    "texmf-dist/...",
+                    "texmf-dist/...file2"
+                  ]
+                ]
+              },
+              "srcfiles": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "executes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "depends": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "postactions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "docfiles": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "file": {
+                      "type": "string"
+                    },
+                    "language": {
+                      "type": "string"
+                    },
+                    "details": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "file"
+                  ],
+                  "additionalProperties": false
+                },
+                "examples": [
+                  [
+                    {
+                      "file": "docfile1",
+                      "language": "en"
+                    },
+                    {
+                      "file": "docfile2",
+                      "details": "readme file"
+                    }
+                  ]
+                ]
+              },
+              "binfiles": {
+                "description": "Keys are architecture names, values are arrays of strings (list of binfiles).",
+                "type": "object",
+                "patternProperties": {
+                  "^.*$": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": [
+                  {
+                    "x86_64-linux": [
+                      "binfile1",
+                      "binfile2",
+                      "..."
+                    ],
+                    "win32": [
+                      "binfile3"
+                    ]
+                  }
+                ]
+              },
+              "binsize": {
+                "description": "Keys are architecture names, values are numbers.",
+                "type": "object",
+                "patternProperties": {
+                  "^.*$": {
+                    "type": "integer"
+                  }
+                },
+                "examples": [
+                  {
+                    "x86_64-linux": 1233,
+                    "win32": 333
+                  }
+                ]
+              },
+              "cataloguedata": {
+                "type": "object",
+                "properties": {
+                  "topics": {
+                    "type": "string"
+                  },
+                  "version": {
+                    "type": "string"
+                  },
+                  "license": {
+                    "type": "string"
+                  },
+                  "ctan": {
+                    "type": "string"
+                  },
+                  "date": {
+                    "type": "string"
+                  },
+                  "related": {
+                    "type": "string"
+                  },
+                  "alias": {
+                    "description": "UNDOCUMENTED.",
+                    "type": "string"
+                  },
+                  "also": {
+                    "description": "UNDOCUMENTED.",
+                    "type": "string"
+                  },
+                  "contact-announce": {
+                    "description": "UNDOCUMENTED.",
+                    "type": "string"
+                  },
+                  "contact-bugs": {
+                    "description": "UNDOCUMENTED.",
+                    "type": "string"
+                  },
+                  "contact-development": {
+                    "description": "UNDOCUMENTED.",
+                    "type": "string"
+                  },
+                  "contact-home": {
+                    "description": "UNDOCUMENTED.",
+                    "type": "string"
+                  },
+                  "contact-repository": {
+                    "description": "UNDOCUMENTED.",
+                    "type": "string"
+                  },
+                  "contact-support": {
+                    "description": "UNDOCUMENTED.",
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false,
+                "examples": [
+                  {
+                    "topics": "graphic",
+                    "version": "1.23"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "category",
+              "revision"
+            ],
+            "additionalProperties": false,
+            "examples": [
+              {
+                "name": "minimal",
+                "category": "Package",
+                "revision": 12345
+              }
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "examples": [
+    {
+      "main": {
+        "options": [],
+        "tlpkgs": []
+      },
+      "tlcontrib": {
+        "options": [],
+        "tlpkgs": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+#!/usr/bin/env -S docker compose -f
+services:
+  fixtures:
+    build:
+      args:
+        profile: |
+          selected_scheme scheme-minimal
+          instopt_adjustrepo 0
+        tlnet: >-
+          https://ctan.math.utah.edu/ctan/tex-archive/systems/texlive/tlnet
+      dockerfile_inline: |
+        FROM alpine:3.19
+        ARG profile
+        ARG tlnet
+        WORKDIR /tmp
+        RUN \
+          set -euo pipefail && \
+          apk add --no-cache jq perl tar wget xz && \
+          wget -O- "$${tlnet}/install-tl-unx.tar.gz" | tar xz --strip=1 && \
+          echo "$${profile}" > texlive.profile && \
+          ./install-tl -profile texlive.profile -repository "$${tlnet}" && \
+          rm -rf ./* && \
+          /usr/local/texlive/*/bin/*/tlmgr path add
+        WORKDIR /workdir
+      platforms: [linux/amd64]
+    configs: [entrypoint.sh]
+    command: sh /entrypoint.sh
+    volumes:
+      - ${PWD}/fixtures:/workdir
+    platform: linux/amd64
+configs:
+  entrypoint.sh:
+    content: |
+      set -euo pipefail
+      rm -f *.json
+      tlmgr dump-tlpdb --local --json | jq . > tlpdb.json
+      tlmgr info --only-installed --json | jq . > tlpobj-infos.json
+      tlmgr option --json show | jq . > tloptions.json
+      tlmgr paper --json | jq . > tlpaper.json
+      tlmgr backup --all
+      tlmgr restore --json | jq . > tlbackup.json

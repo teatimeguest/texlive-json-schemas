@@ -1,0 +1,297 @@
+[
+  {
+    "date": "2024-03-01 16:32",
+    "rev": "45533",
+    "name": "ifplatform"
+  },
+  {
+    "rev": "66186",
+    "date": "2024-03-01 16:32",
+    "name": "metafont"
+  },
+  {
+    "rev": "48599",
+    "date": "2024-03-01 16:32",
+    "name": "dehyph"
+  },
+  {
+    "date": "2024-03-01 16:32",
+    "rev": "66186",
+    "name": "mfware"
+  },
+  {
+    "date": "2024-03-01 16:32",
+    "rev": "65877",
+    "name": "kpathsea.x86_64-linuxmusl"
+  },
+  {
+    "name": "texlive-msg-translations",
+    "date": "2024-03-01 16:32",
+    "rev": "69796"
+  },
+  {
+    "name": "tlshell",
+    "rev": "66771",
+    "date": "2024-03-01 16:32"
+  },
+  {
+    "name": "knuth-local",
+    "date": "2024-03-01 16:32",
+    "rev": "57963"
+  },
+  {
+    "name": "pdftex.x86_64-linuxmusl",
+    "rev": "66084",
+    "date": "2024-03-01 16:32"
+  },
+  {
+    "name": "enctex",
+    "rev": "34957",
+    "date": "2024-03-01 16:32"
+  },
+  {
+    "rev": "69127",
+    "date": "2024-03-01 16:32",
+    "name": "dvipdfmx"
+  },
+  {
+    "name": "cm",
+    "rev": "57963",
+    "date": "2024-03-01 16:32"
+  },
+  {
+    "name": "graphics-def",
+    "date": "2024-03-01 16:32",
+    "rev": "64487"
+  },
+  {
+    "name": "collection-basic",
+    "date": "2024-03-01 16:32",
+    "rev": "59159"
+  },
+  {
+    "date": "2024-03-01 16:32",
+    "rev": "66186",
+    "name": "tex"
+  },
+  {
+    "rev": "66203",
+    "date": "2024-03-01 16:32",
+    "name": "dvips"
+  },
+  {
+    "name": "texlive.infra",
+    "date": "2024-03-01 16:32",
+    "rev": "69740"
+  },
+  {
+    "date": "2024-03-01 16:32",
+    "rev": "66203",
+    "name": "etex"
+  },
+  {
+    "name": "xdvi",
+    "date": "2024-03-01 16:32",
+    "rev": "62387"
+  },
+  {
+    "name": "dvips.x86_64-linuxmusl",
+    "rev": "65877",
+    "date": "2024-03-01 16:32"
+  },
+  {
+    "name": "tex.x86_64-linuxmusl",
+    "date": "2024-03-01 16:32",
+    "rev": "65877"
+  },
+  {
+    "name": "unicode-data",
+    "rev": "68311",
+    "date": "2024-03-01 16:32"
+  },
+  {
+    "date": "2024-03-01 16:32",
+    "rev": "65877",
+    "name": "mfware.x86_64-linuxmusl"
+  },
+  {
+    "rev": "66243",
+    "date": "2024-03-01 16:32",
+    "name": "pdftex"
+  },
+  {
+    "date": "2024-03-01 16:32",
+    "rev": "69113",
+    "name": "modes"
+  },
+  {
+    "rev": "47036",
+    "date": "2024-03-01 16:32",
+    "name": "tlshell.x86_64-linuxmusl"
+  },
+  {
+    "date": "2024-03-01 16:32",
+    "rev": "42428",
+    "name": "mflogo"
+  },
+  {
+    "date": "2024-03-01 16:32",
+    "rev": "69121",
+    "name": "kpathsea"
+  },
+  {
+    "name": "etex-pkg",
+    "date": "2024-03-01 16:32",
+    "rev": "41784"
+  },
+  {
+    "date": "2024-03-01 16:32",
+    "rev": "57963",
+    "name": "knuth-lib"
+  },
+  {
+    "name": "texlive-common",
+    "rev": "68510",
+    "date": "2024-03-01 16:32"
+  },
+  {
+    "date": "2024-03-01 16:32",
+    "rev": "56414",
+    "name": "lua-alt-getopt"
+  },
+  {
+    "rev": "69182",
+    "date": "2024-03-01 16:32",
+    "name": "luatex"
+  },
+  {
+    "name": "scheme-minimal",
+    "date": "2024-03-01 16:32",
+    "rev": "54191"
+  },
+  {
+    "rev": "65877",
+    "date": "2024-03-01 16:32",
+    "name": "bibtex.x86_64-linuxmusl"
+  },
+  {
+    "date": "2024-03-01 16:32",
+    "rev": "68920",
+    "name": "tex-ini-files"
+  },
+  {
+    "name": "scheme-infraonly",
+    "rev": "54191",
+    "date": "2024-03-01 16:32"
+  },
+  {
+    "name": "ec",
+    "date": "2024-03-01 16:32",
+    "rev": "25033"
+  },
+  {
+    "date": "2024-03-01 16:32",
+    "rev": "64356",
+    "name": "texlive-scripts.x86_64-linuxmusl"
+  },
+  {
+    "name": "hyphenex",
+    "rev": "57387",
+    "date": "2024-03-01 16:32"
+  },
+  {
+    "name": "amsfonts",
+    "rev": "61937",
+    "date": "2024-03-01 16:32"
+  },
+  {
+    "date": "2024-03-01 16:32",
+    "rev": "68321",
+    "name": "hyphen-base"
+  },
+  {
+    "name": "glyphlist",
+    "rev": "54074",
+    "date": "2024-03-01 16:32"
+  },
+  {
+    "name": "texlive.infra.x86_64-linuxmusl",
+    "rev": "61925",
+    "date": "2024-03-01 16:32"
+  },
+  {
+    "date": "2024-03-01 16:32",
+    "rev": "57963",
+    "name": "plain"
+  },
+  {
+    "rev": "70249",
+    "date": "2024-03-01 16:32",
+    "name": "texlive-scripts"
+  },
+  {
+    "date": "2024-03-01 16:32",
+    "rev": "67047",
+    "name": "luatex.x86_64-linuxmusl"
+  },
+  {
+    "rev": "65877",
+    "date": "2024-03-01 16:32",
+    "name": "makeindex.x86_64-linuxmusl"
+  },
+  {
+    "rev": "65877",
+    "date": "2024-03-01 16:32",
+    "name": "metafont.x86_64-linuxmusl"
+  },
+  {
+    "date": "2024-03-01 16:32",
+    "rev": "65877",
+    "name": "xdvi.x86_64-linuxmusl"
+  },
+  {
+    "rev": "62517",
+    "date": "2024-03-01 16:32",
+    "name": "makeindex"
+  },
+  {
+    "date": "2024-03-01 16:32",
+    "rev": "66186",
+    "name": "luahbtex"
+  },
+  {
+    "name": "iftex",
+    "rev": "61910",
+    "date": "2024-03-01 16:32"
+  },
+  {
+    "name": "bibtex",
+    "rev": "66186",
+    "date": "2024-03-01 16:32"
+  },
+  {
+    "name": "dvipdfmx.x86_64-linuxmusl",
+    "date": "2024-03-01 16:32",
+    "rev": "65877"
+  },
+  {
+    "rev": "67184",
+    "date": "2024-03-01 16:32",
+    "name": "texlive-en"
+  },
+  {
+    "rev": "67047",
+    "date": "2024-03-01 16:32",
+    "name": "luahbtex.x86_64-linuxmusl"
+  },
+  {
+    "rev": "49086",
+    "date": "2024-03-01 16:32",
+    "name": "colorprofiles"
+  },
+  {
+    "name": "hyph-utf8",
+    "rev": "61719",
+    "date": "2024-03-01 16:32"
+  }
+]

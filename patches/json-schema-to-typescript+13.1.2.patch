@@ -1,0 +1,29 @@
+diff --git a/node_modules/json-schema-to-typescript/dist/src/parser.js b/node_modules/json-schema-to-typescript/dist/src/parser.js
+index d8e570f..d82a082 100644
+--- a/node_modules/json-schema-to-typescript/dist/src/parser.js
++++ b/node_modules/json-schema-to-typescript/dist/src/parser.js
+@@ -332,22 +332,19 @@ function parseSchema(schema, options, processed, usedNames, parentSchemaName) {
+         singlePatternProperty = !schema.additionalProperties && Object.keys(schema.patternProperties).length === 1;
+         asts = asts.concat((0, lodash_1.map)(schema.patternProperties, function (value, key) {
+             var ast = parse(value, options, key, processed, usedNames);
+-            var comment = "This interface was referenced by `".concat(parentSchemaName, "`'s JSON-Schema definition\nvia the `patternProperty` \"").concat(key.replace('*/', '*\\/'), "\".");
+-            ast.comment = ast.comment ? "".concat(ast.comment, "\n\n").concat(comment) : comment;
++            ast.keyName = singlePatternProperty ? '[k: string]' : key;
+             return {
+                 ast: ast,
+                 isPatternProperty: !singlePatternProperty,
+                 isRequired: singlePatternProperty || (0, lodash_1.includes)(schema.required || [], key),
+                 isUnreachableDefinition: false,
+-                keyName: singlePatternProperty ? '[k: string]' : key,
++                keyName: ast.keyName,
+             };
+         }));
+     }
+     if (options.unreachableDefinitions) {
+         asts = asts.concat((0, lodash_1.map)(schema.$defs, function (value, key) {
+             var ast = parse(value, options, key, processed, usedNames);
+-            var comment = "This interface was referenced by `".concat(parentSchemaName, "`'s JSON-Schema\nvia the `definition` \"").concat(key, "\".");
+-            ast.comment = ast.comment ? "".concat(ast.comment, "\n\n").concat(comment) : comment;
+             return {
+                 ast: ast,
+                 isPatternProperty: false,

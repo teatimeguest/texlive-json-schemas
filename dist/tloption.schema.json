@@ -1,0 +1,45 @@
+{
+  "$id": "tloption.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TLOPTION",
+  "description": "https://tug.org/svn/texlive/trunk/Master/tlpkg/doc/json-formats.txt?revision=56458&view=markup#l133",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "tlmgrname": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "format": {
+      "type": "string"
+    },
+    "default": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "tlmgrname",
+    "description",
+    "format",
+    "default"
+  ],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "format": "b",
+      "description": "Install source files",
+      "tlmgrname": "srcfiles",
+      "value": "1",
+      "default": "1",
+      "name": "install_srcfiles"
+    }
+  ]
+}

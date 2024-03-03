@@ -1,0 +1,36 @@
+{
+  "$id": "tlbackup.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TLBACKUP",
+  "description": "This format is used when dumping available backups via the tlmgr restore action. JSON array of JSON objects, one per available backup.\nhttps://tug.org/svn/texlive/trunk/Master/tlpkg/doc/json-formats.txt?revision=56458&view=markup#l95",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "rev": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": false
+  },
+  "examples": [
+    [
+      {
+        "date": "2017-10-30 11:04",
+        "name": "uplatex",
+        "rev": "45414"
+      },
+      {
+        "date": "2017-09-28 10:50",
+        "name": "uplatex",
+        "rev": "45141"
+      }
+    ]
+  ]
+}

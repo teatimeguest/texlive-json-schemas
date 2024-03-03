@@ -1,0 +1,40 @@
+{
+  "$id": "tlpaper.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TLPAPER",
+  "description": "https://tug.org/svn/texlive/trunk/Master/tlpkg/doc/json-formats.txt?revision=56458&view=markup#l116",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "program": {
+        "description": "Gives the program name.",
+        "type": "string"
+      },
+      "file": {
+        "description": "The place where the configuration has been found.",
+        "type": "string"
+      },
+      "options": {
+        "description": "An array of strings with first one being the currently selected paper.",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "additionalProperties": false
+  },
+  "examples": [
+    [
+      {
+        "options": [
+          "a4",
+          "letter"
+        ],
+        "file": "/usr/local/texlive/2017/texmf-config/tex/generic/config/pdftexconfig.tex",
+        "program": "pdftex"
+      }
+    ]
+  ]
+}

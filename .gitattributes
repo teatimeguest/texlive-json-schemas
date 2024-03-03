@@ -1,0 +1,9 @@
+* text=auto
+
+compose.yml text=lf
+
+*.diff -binary linguist-generated
+*.patch -binary linguist-generated
+dist/** -diff -merge linguist-generated
+package-lock.json -diff -merge linguist-generated
+tests/fixtures/** -diff -merge linguist-generated

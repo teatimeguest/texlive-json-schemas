@@ -1,0 +1,85 @@
+diff --git a/json-formats.txt b/json-formats.txt
+index 9db666e..fbb8fa2 100644
+--- a/json-formats.txt
++++ b/json-formats.txt
+@@ -12,7 +12,7 @@ JSON object with key/values according to the underlying structure with a few
+ exception (docfiles and docfiledata are merged). Details:
+ 
+ * String type:
+-  *name, shortdesc, longdesc, *category, catalogue, containerchecksum,
++  *name, shortdesc (nullable), longdesc (nullable), *category, catalogue (nullable), containerchecksum,
+   srccontainerchecksum, doccontainerchecksum
+   Example: "name": "12many"
+ 
+@@ -21,7 +21,7 @@ exception (docfiles and docfiledata are merged). Details:
+   Example: "revision": 12345
+ 
+ * Boolean type:
+-  available, installed, relocated
++  relocated
+   Example: "relocated": false
+ 
+ * Array type (with the sub-type in parenthesis):
+@@ -30,14 +30,16 @@ exception (docfiles and docfiledata are merged). Details:
+   - of Object type:
+     . docfiles: keys: *file, language, details (all Strings)
+       Example:
+-        [ { "file": "docfile1", "lang": "en" }, { "file": "docfile2", "detail": "readme file" } ]
++        [ { "file": "docfile1", "language": "en" }, { "file": "docfile2", "details": "readme file" } ]
+ 
+ * Object type:
+   - binfiles: keys are architecture names, values are arrays of strings (list of binfiles)
+     Example: { "x86_64-linux": [ "binfile1", "binfile2", ... ], "win32": [ "binfile3" ] }
+   - binsize: keys are architecture names, values are numbers
+     Example: { "x86_64-linux": 1233, "win32": 333 }
+-  - cataloguedata: keys are topics, version, license, ctan, date, related (all strings)
++  - cataloguedata: keys are topics, version, license, ctan, date, related,
++      alias, also, contact-announce, contact-bugs, contact-development,
++      contact-home, contact-repository, contact-support (all strings)
+     Example: { "topics": "graphic", "version": "1.23" }
+ 
+ 
+@@ -66,12 +68,12 @@ TLPDBSINGLE
+ -----------
+ JSON object with the following fields:
+ * Object type:
+-  - options: see TLOPTION below
+-  - settings: see TLSETTING below
+   - configs: keys are the names of %TLConfig::TLPDBConfigs, that is
+     . Boolean type: container_split_src_files, container_split_doc_files
+     . String type: container_format, minrelease, release
+ * Array type:
++  - options: see TLOPTION below
++  - settings: see TLSETTING below
+   - tlpkgs: JSON array of TLPOBJs in JSON format
+ 
+ 
+@@ -83,11 +85,11 @@ keys are tags, values are tlpdb in TLPDBSINGLE format
+ Example:
+ {
+   "main": {
+-    "options": {...},
++    "options": [...],
+     "tlpkgs": [...]
+   },
+   "tlcontrib": {
+-    "option": {...},
++    "options": [...],
+     "tlpkgs": [...]
+   }
+ }
+@@ -134,11 +136,11 @@ TLOPTION / TLSETTING
+ --------------------
+ each option/setting is an object with the following keys, values
+ are all strings(!)
+-for TLOPTIONS:
++for TLOPTION:
+   name, tlmgrname, description, format, default, value (optional)
+ for TLSETTING:
+-  name, description, format, value (optional)
+-Example TLOPTIONS:
++  name, description, type (optional), value (optional)
++Example TLOPTION:
+          {
+             "format" : "b",
+             "description" : "Install source files",
