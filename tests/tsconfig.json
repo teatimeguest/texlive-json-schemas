@@ -5,9 +5,5 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "target": "esnext",
-    "baseUrl": "..",
-    "paths": {
-      "#/*": ["dist/*.d.ts", "dist/*"],
-    },
   },
 }

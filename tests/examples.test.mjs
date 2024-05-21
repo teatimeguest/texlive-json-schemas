@@ -1,12 +1,12 @@
 import Ajv from 'ajv';
 import { expect, test } from 'vitest';
 
-import tlbackup from '#/tlbackup.schema.json' with { type: 'json' };
-import tloption from '#/tloption.schema.json' with { type: 'json' };
-import tlpaper from '#/tlpaper.schema.json' with { type: 'json' };
-import tlpdb from '#/tlpdb.schema.json' with { type: 'json' };
-import tlpobj from '#/tlpobj.schema.json' with { type: 'json' };
-import tlsetting from '#/tlsetting.schema.json' with { type: 'json' };
+import tlbackup from 'texlive-json-schemas/tlbackup.schema.json';
+import tloption from 'texlive-json-schemas/tloption.schema.json';
+import tlpaper from 'texlive-json-schemas/tlpaper.schema.json';
+import tlpdb from 'texlive-json-schemas/tlpdb.schema.json';
+import tlpobj from 'texlive-json-schemas/tlpobj.schema.json';
+import tlsetting from 'texlive-json-schemas/tlsetting.schema.json';
 
 const ajv = new Ajv({ allErrors: true, strict: true });
 

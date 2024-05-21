@@ -2,7 +2,7 @@
   "$id": "tlpobj-info.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "TLPOBJINFO",
-  "description": "This JSON format is dumped on `tlmgr info --data json`.\nhttps://tug.org/svn/texlive/trunk/Master/tlpkg/doc/json-formats.txt?revision=56458&view=markup#l53",
+  "description": "This JSON format is dumped on `tlmgr info --data json`.\n\nhttps://tug.org/svn/texlive/trunk/Master/tlpkg/doc/json-formats.txt?revision=56458&view=markup#l53",
   "type": "object",
   "properties": {
     "name": {
@@ -26,7 +26,16 @@
       ]
     },
     "category": {
-      "type": "string"
+      "title": "Category",
+      "description": "Identifies the category into which this package belongs.\n\nhttps://www.tug.org/texlive/doc/tlpkgdoc/TLPSRC.html#category",
+      "type": "string",
+      "enum": [
+        "Collection",
+        "Scheme",
+        "TLCore",
+        "Package",
+        "ConTeXt"
+      ]
     },
     "catalogue": {
       "$comment": "The value of `null` is UNDOCUMENTED.",

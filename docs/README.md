@@ -178,9 +178,10 @@ JSON object with the following fields:
   <dt>Object type:</dt>
   <dd>
     <p>
-      <code>configs</code>:
-      keys are the names of <code>%TLConfig::TLPDBConfigs</code>, that is
-      <dl>
+
+`configs`: keys are the names of <code>%TLConfig::TLPDBConfigs</code>, that is
+
+<dl>
         <dt>Boolean type:</dt>
         <dd>
           <p>
@@ -197,7 +198,8 @@ JSON object with the following fields:
 </p>
         </dd>
       </dl>
-    </p>
+
+</p>
   </dd>
   <dt>Array type:</dt>
   <dd>

@@ -2,8 +2,8 @@ import Ajv, { type JSONSchemaType } from 'ajv';
 // import type { JTDDataType } from 'ajv/dist/jtd';
 import { assert, expectTypeOf, test } from 'vitest';
 
-import tlpdb from '#/tlpdb.schema.json';
-import type { TLPDB } from '#/types';
+import tlpdb from 'texlive-json-schemas/tlpdb.schema.json';
+import type { TLPDB } from 'texlive-json-schemas/types';
 
 const ajv = new Ajv();
 

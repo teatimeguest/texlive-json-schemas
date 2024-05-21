@@ -1,16 +1,13 @@
-import { createRequire } from 'node:module';
-
 import Ajv from 'ajv';
 import { expect, test } from 'vitest';
 
-import tlbackup from '#/tlbackup.schema.json' with { type: 'json' };
-import tloption from '#/tloption.schema.json' with { type: 'json' };
-import tlpaper from '#/tlpaper.schema.json' with { type: 'json' };
-import tlpdb from '#/tlpdb.schema.json' with { type: 'json' };
-import tlpobjInfo from '#/tlpobj-info.schema.json' with { type: 'json' };
+import tlbackup from 'texlive-json-schemas/tlbackup.schema.json';
+import tloption from 'texlive-json-schemas/tloption.schema.json';
+import tlpaper from 'texlive-json-schemas/tlpaper.schema.json';
+import tlpdb from 'texlive-json-schemas/tlpdb.schema.json';
+import tlpobjInfo from 'texlive-json-schemas/tlpobj-info.schema.json';
 
 const ajv = new Ajv({ allErrors: true, removeAdditional: 'all', strict: true });
-const require = createRequire(import.meta.url);
 
 test('tlbackup.schema.json', async () => {
   const json = require('./fixtures/tlbackup.json');

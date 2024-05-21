@@ -16,7 +16,7 @@ properties:
   longdesc:
     $comment: The value of `null` is UNDOCUMENTED.
     type: [string , "null"]
-  category: { type: string }
+  category: { $ref: "#/$defs/Category" }
   catalogue:
     $comment: The value of `null` is UNDOCUMENTED.
     type: [string , "null"]
@@ -118,12 +118,22 @@ examples:
       "category": "Package",
       "revision": 12345
     }
+$defs:
+  Category:
+    title: Category
+    description: |-
+      Identifies the category into which this package belongs.
+
+      https://www.tug.org/texlive/doc/tlpkgdoc/TLPSRC.html#category
+    type: string
+    enum: [Collection, Scheme, TLCore, Package, ConTeXt]
 ---
 $id: tlpobj-info.schema.json
 $schema: http://json-schema.org/draft-07/schema#
 title: TLPOBJINFO
 description: |-
   This JSON format is dumped on `tlmgr info --data json`.
+
   https://tug.org/svn/texlive/trunk/Master/tlpkg/doc/json-formats.txt?revision=56458&view=markup#l53
 type: object
 properties:

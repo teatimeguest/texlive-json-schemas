@@ -138,7 +138,16 @@
             ]
           },
           "category": {
-            "type": "string"
+            "title": "Category",
+            "description": "Identifies the category into which this package belongs.\n\nhttps://www.tug.org/texlive/doc/tlpkgdoc/TLPSRC.html#category",
+            "type": "string",
+            "enum": [
+              "Collection",
+              "Scheme",
+              "TLCore",
+              "Package",
+              "ConTeXt"
+            ]
           },
           "catalogue": {
             "$comment": "The value of `null` is UNDOCUMENTED.",

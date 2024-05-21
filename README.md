@@ -31,12 +31,15 @@ if (ajv.validate<TLPDB>(tlpdb, json)) {
 
 ## References
 
-- [https://tug.org/svn/texlive/trunk/Master/tlpkg/doc/json-formats.txt][json-formats]
+- [**JSON formats for the various outputs of tlmgr** | root/trunk/Master/tlpkg/doc/json-formats.txt][json-formats]
+- [**Those strange 00texlive packages** | root/trunk/Master/tlpkg/doc/00texlive-packages.txt][00texlive-packages]
+- [<cite>TeX Live implementation documentation</cite>](https://www.tug.org/texlive/doc/tlpkgdoc/)
 
 ## License
 
 [MIT License](https://github.com/teatimeguest/texlive-json-schemas/blob/main/LICENSE)
 
+[00texlive-packages]: https://tug.org/svn/texlive/trunk/Master/tlpkg/doc/00texlive-packages.txt?revision=45617&view=markup
 [diff]: https://github.com/teatimeguest/texlive-json-schemas/blob/main/docs/json-formats.txt.diff
 [json-formats]: https://tug.org/svn/texlive/trunk/Master/tlpkg/doc/json-formats.txt?revision=56458&view=markup
 [npm-badge]: https://img.shields.io/npm/v/texlive-json-schemas?logo=npm&logoColor=959da5&labelColor=2e353b&color=c40000
