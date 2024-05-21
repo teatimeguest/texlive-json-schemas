@@ -1,0 +1,38 @@
+name: Release
+on:
+  push:
+    tags: ['v*.*.*']
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          registry-url: https://registry.npmjs.org
+      - run: npm publish --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - run: npm pack
+      - name: Generate release notes
+        run: >-
+          git for-each-ref "${GITHUB_REF}" --format='%(contents:body)' |
+            tee RELEASENOTES.md
+      - name: Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: >-
+          gh release create --draft -F RELEASENOTES.md -- "${GITHUB_REF_NAME}" *.tgz
